@@ -1,72 +1,454 @@
-Privacy Policy for SmokeLess Pro
-Last Updated: March 14, 2026
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmokeLess Pro - Politika e Privatësisë</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        :root {
+            --bg: #0A0F1C;
+            --bg-card: #141B2D;
+            --bg-elevated: #1A233C;
+            --primary: #FF6B35;
+            --primary-glow: rgba(255, 107, 53, 0.15);
+            --accent: #00D4AA;
+            --text: #FFFFFF;
+            --text-secondary: #8A92A6;
+            --text-tertiary: #5D6679;
+            --border: rgba(255, 255, 255, 0.08);
+            --border-accent: rgba(255, 107, 53, 0.2);
+            --radius-xl: 24px;
+            --radius-l: 16px;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-Welcome to SmokeLess Pro. Your privacy is extremely important to us. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application.
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
 
-By using SmokeLess Pro, you agree to the collection and use of information in accordance with this policy.
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            overflow-x: hidden;
+        }
 
-1. Information We Collect
-We collect various types of information for different purposes to provide and improve our service to you.
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            position: relative;
+        }
 
-A. Personal Data
-While using our application (especially during the "Onboarding" process), we may ask you for data related to your smoking habits:
+        /* Gradient Background Blur */
+        .blur-sphere {
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+            z-index: -1;
+            filter: blur(40px);
+            pointer-events: none;
+        }
+        .sphere-1 { top: -100px; right: -100px; }
+        .sphere-2 { bottom: -100px; left: -100px; }
 
-Smoking Habits: How many cigarettes you smoke per day, pack price, and the number of cigarettes per pack.
-Goals: Your reduction plan (Gentle, Standard, Aggressive) and wake/sleep times.
-Logs: The time when you record smoking a cigarette.
-B. Usage and Device Data
-We collect technical information automatically:
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeInDown 0.8s ease-out;
+        }
 
-Device Information: Brand, model, and operating system version.
-IP Address: Used for basic user identification and security.
-Platform: Whether you are using iOS or Android.
-C. Location (Optional)
-The app may request access to your location (GPS) to provide contextual data or regional statistics. This information is only collected with your explicit consent.
+        .logo-wrap {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, var(--primary), #FF4757);
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 15px 35px rgba(255, 107, 53, 0.3);
+        }
 
-D. Media and Camera (Optional)
-In the "Why I Quit" section, you can upload photos or use the camera to save motivational visuals. These photos are stored locally or in your secure storage.
+        h1 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #fff, #8A92A6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-E. Financial Data (Donations)
-If you choose to make a donation via Stripe, we do not store your credit card details. All transactions are securely processed by Stripe. We only receive payment confirmation and a transaction ID.
+        .last-updated {
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
 
-2. How We Use Your Data
-We use the collected data to:
+        /* Language Switcher */
+        .lang-switcher {
+            display: flex;
+            background: var(--bg-card);
+            padding: 4px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            width: fit-content;
+            margin: 2rem auto;
+            gap: 4px;
+        }
 
-Generate personalized cigarette reduction plans.
-Calculate your financial savings and health benefits.
-Send reminder and motivational notifications.
-Analyze app performance and fix bugs.
-Manage donation transactions.
-3. Third-Party Services
-SmokeLess Pro integrates services from trusted partners for proper functionality:
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
 
-Stripe: For payment/donation processing.
-Google AdMob: For displaying ads (we collect the advertising ID to show relevant ads).
-Expo/Firebase: For managing push notifications.
-Postgres (Database): Our data is stored on secure servers to enable you to access your account from different devices.
-4. Data Storage and Security
-Your security is our priority.
+        .lang-btn.active {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+        }
 
-Local Storage: Basic data is stored on your device using secure technologies (SecureStore).
-Transmission: All communication with our servers is done via the encrypted HTTPS protocol.
-Protection: We use industrial safeguards to prevent unauthorized access.
-5. Your Rights (GDPR/Privacy)
-You have the right to:
+        /* Sections */
+        .section-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            border-radius: var(--radius-xl);
+            margin-bottom: 2rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
 
-Request a copy of the data we have about you.
-Request correction of inaccurate data.
-Request full deletion of your data (via the "Data Management" section in Settings).
-Withdraw consent for notifications or location access at any time.
-6. Children's Privacy
-Our service does not address anyone under the age of 18 (or the legal smoking age in your jurisdiction). We do not knowingly collect data from children.
+        .section-card:hover {
+            border-color: var(--border-accent);
+            transform: translateY(-4px);
+        }
 
-7. Changes to This Policy
-We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the "last updated" date.
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
 
-8. Contact Us
-If you have questions about this Privacy Policy, please contact us at:
+        .icon-box {
+            width: 44px;
+            height: 44px;
+            background: var(--bg-elevated);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            border: 1px solid var(--border);
+        }
 
-Email: [YOUR_EMAIL_HERE]
-Social Media: @smokeless.xk (Instagram/TikTok)
-This policy has been specifically created for the current functionalities of SmokeLess Pro.
+        h2 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-radius: var(--radius-l);
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary);
+            margin-top: 1.5rem;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 0;
+            color: var(--text-tertiary);
+        }
+
+        .footer-tag {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 12px 24px;
+            border-radius: 14px;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: var(--transition);
+        }
+
+        .contact-btn:hover {
+            background: var(--bg-elevated);
+            border-color: var(--primary);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Language-specific content display */
+        [lang-content] {
+            display: none;
+        }
+        [lang-content].active {
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .section-card { padding: 1.5rem; }
+            .section-header { flex-direction: column; align-items: flex-start; text-align: left; }
+        }
+    </style>
+</head>
+<body>
+    <div class="blur-sphere sphere-1"></div>
+    <div class="blur-sphere sphere-2"></div>
+
+    <div class="container">
+        <header>
+            <div class="logo-wrap">
+                <i data-feather="shield" size="36" color="#fff"></i>
+            </div>
+            <h1 id="page-title">SmokeLess Pro</h1>
+            <p class="last-updated" id="date-label">E përditësuar: 14 Mars 2026</p>
+
+            <div class="lang-switcher">
+                <button class="lang-btn active" onclick="switchLang('sq')">SQ</button>
+                <button class="lang-btn" onclick="switchLang('en')">EN</button>
+            </div>
+        </header>
+
+        <!-- ALBANIAN CONTENT -->
+        <div id="content-sq" class="active" lang-content>
+            <div class="section-card" style="animation-delay: 0.1s">
+                <div class="section-header">
+                    <div class="icon-box"><i data-feather="info"></i></div>
+                    <h2>1. Informacioni që Mbledhim</h2>
+                </div>
+                <p>Ne mbledhim lloje të ndryshme informacioni për qëllime të ndryshme për t'ju ofruar dhe përmirësuar shërbimin tonë.</p>
+                <ul>
+                    <li><strong>Zakonet e pirjes:</strong> Sa cigare pini, çmimi i paketës dhe objektivat.</li>
+                    <li><strong>Të dhënat teknike:</strong> Modeli i pajisjes, IP-ja dhe platforma.</li>
+                    <li><strong>Lokacioni:</strong> Vetëm me pëlqimin tuaj për statistika lokale.</li>
+                    <li><strong>Financat:</strong> Donacionet përpunohen në mënyrë të sigurt nga Stripe.</li>
+                </ul>
+            </div>
+
+            <div class="section-card" style="animation-delay: 0.2s">
+                <div class="section-header">
+                    <div class="icon-box"><i data-feather="activity"></i></div>
+                    <h2>2. Si i Përdorim të Dhënat</h2>
+                </div>
+                <p>Informacioni juaj na ndihmon të krijojmë një rrugëtim të personalizuar drejt jetës pa duhan:</p>
+                <ul>
+                    <li>Gjenerimi i planeve të personalizuara të reduktimit.</li>
+                    <li>Llogaritja e kursimeve dhe përfitimeve shëndetësore.</li>
+                    <li>Dërgimi i njoftimeve motivuese në kohë reale.</li>
+                </ul>
+                <div class="highlight-box">
+                    <p>Çdo e dhënë përdoret ekskluzivisht për të përmirësuar suksesin tuaj personal në lënien e duhanit.</p>
+                </div>
+            </div>
+
+            <div class="section-card" style="animation-delay: 0.3s">
+                <div class="section-header">
+                    <div class="icon-box"><i data-feather="share-2"></i></div>
+                    <h2>3. Shërbimet e Palëve të Treta</h2>
+                </div>
+                <p>Ne bashkëpunojmë me partnerë globalë për të garantuar funksionalitet të lartë:</p>
+                <ul>
+                    <li><strong>Stripe:</strong> Për pagesat dhe donacionet e sigurta.</li>
+                    <li><strong>Google AdMob:</strong> Për reklamim të përgjegjshëm.</li>
+                    <li><strong>Expo/Firebase:</strong> Për njoftimet "push" dhe sinkronizimin.</li>
+                </ul>
+            </div>
+
+            <div class="section-card" style="animation-delay: 0.4s">
+                <div class="section-header">
+                    <div class="icon-box"><i data-feather="lock"></i></div>
+                    <h2>4. Siguria e të Dhënave</h2>
+                </div>
+                <p>Të dhënat tuaja enkriptohen dhe ruhen në serverë të sigurt poashtu edhe lokalisht në pajisje duke përdorur teknologjitë më të fundit të mbrojtjes (HTTPS, SecureStore).</p>
+            </div>
+
+            <div class="section-card" style="animation-delay: 0.5s">
+                <div class="section-header">
+                    <div class="icon-box"><i data-feather="user-check"></i></div>
+                    <h2>5. Të Drejtat Tuaja</h2>
+                </div>
+                <p>Sipas GDPR-it, ju keni kontroll të plotë: Mund të kërkoni kopjen e të dhënave, t'i modifikoni ato, ose t'i fshini përfundimisht nga sistemi ynë në çdo kohë përmes Cilësimeve.</p>
+            </div>
+        </div>
+
+        <!-- ENGLISH CONTENT -->
+        <div id="content-en" lang-content>
+            <div class="section-card">
+                <div class="section-header">
+                    <div class="icon-box"><i data-feather="info"></i></div>
+                    <h2>1. Information We Collect</h2>
+                </div>
+                <p>We collect various types of information to provide and improve our service to you.</p>
+                <ul>
+                    <li><strong>Smoking Habits:</strong> Daily consumption, pack price, and goals.</li>
+                    <li><strong>Technical Data:</strong> Device model, IP address, and platform.</li>
+                    <li><strong>Location:</strong> Only with your consent for local stats.</li>
+                    <li><strong>Financials:</strong> Donations are securely processed by Stripe.</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <div class="section-header">
+                    <div class="icon-box"><i data-feather="activity"></i></div>
+                    <h2>2. How We Use Data</h2>
+                </div>
+                <p>Your information helps us create a personalized journey toward a smoke-free life:</p>
+                <ul>
+                    <li>Generating custom reduction plans.</li>
+                    <li>Calculating savings and health milestones.</li>
+                    <li>Sending real-time motivational alerts.</li>
+                </ul>
+                <div class="highlight-box">
+                    <p>Every piece of data is used exclusively to enhance your personal success in quitting.</p>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <div class="section-header">
+                    <div class="icon-box"><i data-feather="share-2"></i></div>
+                    <h2>3. Third-Party Services</h2>
+                </div>
+                <p>We partner with global providers to ensure high-end functionality:</p>
+                <ul>
+                    <li><strong>Stripe:</strong> For secure payments and donations.</li>
+                    <li><strong>Google AdMob:</strong> For responsible advertising.</li>
+                    <li><strong>Expo/Firebase:</strong> For push notifications and sync.</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <div class="section-header">
+                    <div class="icon-box"><i data-feather="lock"></i></div>
+                    <h2>4. Data Security</h2>
+                </div>
+                <p>Your data is encrypted and stored on secure servers and locally on your device using the latest protection technologies (HTTPS, SecureStore).</p>
+            </div>
+
+            <div class="section-card">
+                <div class="section-header">
+                    <div class="icon-box"><i data-feather="user-check"></i></div>
+                    <h2>5. Your Rights</h2>
+                </div>
+                <p>Under GDPR, you have full control: You can request a copy of your data, modify it, or delete it permanently from our system at any time via Settings.</p>
+            </div>
+        </div>
+
+        <footer>
+            <span class="footer-tag">SmokeLess Pro</span>
+            <p id="footer-text">Nëse keni pyetje, na kontaktoni:</p>
+            <a href="mailto:support@smokeless.xk" class="contact-btn">
+                <i data-feather="mail"></i> support@smokeless.xk
+            </a>
+            <p style="margin-top: 2rem; font-size: 0.8rem;">&copy; 2026 SmokeLess Pro. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        feather.replace();
+
+        function switchLang(lang) {
+            // Update buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.innerText.toLowerCase() === lang) btn.classList.add('active');
+            });
+
+            // Update content
+            document.querySelectorAll('[lang-content]').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById('content-' + lang).classList.add('active');
+
+            // Update static labels
+            if (lang === 'sq') {
+                document.getElementById('page-title').innerText = 'Politika e Privatësisë';
+                document.getElementById('date-label').innerText = 'E përditësuar: 14 Mars 2026';
+                document.getElementById('footer-text').innerText = 'Nëse keni pyetje, na kontaktoni:';
+            } else {
+                document.getElementById('page-title').innerText = 'Privacy Policy';
+                document.getElementById('date-label').innerText = 'Last Updated: March 14, 2026';
+                document.getElementById('footer-text').innerText = 'If you have questions, contact us:';
+            }
+        }
+    </script>
+</body>
+</html>
 
